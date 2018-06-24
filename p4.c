@@ -1,33 +1,32 @@
+    /* Luan Samuel Lopes Mendes 
+11621ETE016
+
+
+*/
+
+
 #include <stdio.h>
 
-int main(int ab, char ** ac) 
-{
+int main ()
+   {	
+	int i=0, x=0;
+	char num[300];
 	
+	printf("Insira uma string qualquer: \n");
+	fgets(num,300,stdin);
 	
-
-    char numero[256];
-	
-    int y=0,a;
-	
-    printf("Digite a string\n");
-	
-    scanf("%s",&numero);
-	
-    while(numero[y]!='\0')
-{
+	while(num[i]){
 		
-         a=48;
-		
-         while(a>=48 && a<=57){
+		if(num[i]>=48 && num[i]<=57){
 			
-              if(numero[y]==a) printf("%c",numero[y]);
-			
-              a++;
+			num[i]=num[i]-'0';
+			x = x*10+num[i];
+		}
 		
-         }
-		
-         y++;
+		i++;
+	}
 	
-     }
-
+	printf("String formatada: %d",x);
+	
+	return 0;
 }
