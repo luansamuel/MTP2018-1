@@ -1,3 +1,9 @@
+    /* Luan Samuel Lopes Mendes 
+11621ETE016
+
+
+*/
+
 #include <stdio.h>
 void conv2bin(int i)
 {
