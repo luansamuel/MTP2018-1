@@ -5,42 +5,44 @@
 */
 #include <stdio.h>
 
-int soma(int quant, int vet[])
-{
+float media(int soma, float n){
+	float mediaDivisao;
+	mediaDivisao = soma/n;
+	return mediaDivisao;
+}
 
-	if(quant == 0)
-		return 0;
-	else
-	{	
-		int s;
-    	s = soma (quant-1, vet);
-    	if (vet[quant-1] > 0) 
-			s = s + vet[quant-1];
-    	return (s);
-   }
-}
-float media(int quant, int soma)
-{
-	return soma/quant;
-}
+int numerovetor(int vet[20], int n) {
+   	int i, soma=0;
+   	for (i=0;i<n;i++)
+    {
+    	soma+=vet[i];
+	}
+      return (soma);
+    }
+
 int main()
 {
-	int num=0, vet[20], i, somatorio;
-	for(i=0; i<20; i++)
-		vet[i]=0;
+
+	int i, num[20], soma, n;
+
 	do
 	{
-		printf("Digite a quantidade de numeros: ");
-		scanf("%d", &num);
-		getchar();
-	}while(num<5 && num>20);
-	for(i=0; i<num; i++)
+		printf("Quantidade de numeros para fazer a media:");
+		scanf("%d",&n);
+    }
+    while(n<5||n>20);
+
+	for(i=0; i<20; i++){num[i] = 0;}
+
+	for(i=0; i<n; i++)
 	{
-		printf("\nDigite um numero: ");
-		scanf("%d", &vet[i]);
-		getchar();
+    printf("\n %d numero: ", i+1);
+    scanf("%d", &num[i]);
+    getchar();
 	}
-	somatorio = soma(num, vet);
-	printf("Somatorio: %d\nMedia: %f", somatorio, media(num, somatorio));
+	soma = (numerovetor(num, i));
+
+	printf("\nMedia - %f", media(soma, n));
+
 	return 0;
-}
+	}
